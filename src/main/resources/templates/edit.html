@@ -34,7 +34,7 @@
         <div class="mb-3">
             <label for="profesor" class="form-label">Profesor</label>
             <select class="form-select" id="profesor" th:field="*{profesor}"
-                    sec:authorize="hasAuthority('RECTOR')" th:disabled="${not #authorization.expression('hasAuthority(''RECTOR'')')}">
+                    sec:authorize="hasAuthority('RECTOR')">
                 <option value="">Seleccione un profesor</option>
                 <option th:each="profesor : ${profesores}" th:value="${profesor.userId}" th:text="${profesor.username}"></option>
             </select>
